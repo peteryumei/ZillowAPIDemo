@@ -1,16 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{54B5F12B-096B-4256-A28D-E6B7269673ED}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7DDBCE6E-80BC-4D50-9719-6A1CA107C968}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ZillowAPIDemo", "src\ZillowAPIDemo\ZillowAPIDemo.xproj", "{063AE578-0F5A-4C5D-8532-0DBB7B587124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZillowAPIDemo", "src\ZillowAPIDemo\ZillowAPIDemo.csproj", "{063AE578-0F5A-4C5D-8532-0DBB7B587124}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -45,6 +45,8 @@ namespace ZillowAPIDemo.Models
 
         public string zestimateLow { get; set; }
 
+        public string percentile { get; set; }
+
         public string zestimateHigh { get; set; }
 
         public string zillowIndex { get; set; }

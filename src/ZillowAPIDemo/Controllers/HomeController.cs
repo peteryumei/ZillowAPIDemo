@@ -20,11 +20,31 @@ namespace ZillowAPIDemo.Controllers
         [ActionName("Index")]
         public IActionResult IndexPost(Models.HomeAddress model)
         {
-
-            string address = model.StreetAddress;
             IZillowService zillowService = new ZillowService();
-            SearchResult resultResultModel = zillowService.HomeSearch(model);
-            return View("SearchResult", resultResultModel);
+            try { 
+                SearchResult resultModel = zillowService.HomeSearch(model);
+                if (resultModel.returnCode == "0")
+                    return View("SearchResult", resultModel);
+                else
+                    return View("ErrorPage", resultModel);
+            }
+             catch (Exception ex)
+            {
+                SearchResult result = new SearchResult();
+                result.returnCode = "-1";
+                result.returnMessgae = "Fatal Error: " + ex.Message;
+                return View("ErrorPage", result);
+            }
+        }
+
+        [HttpGet]
+        public JsonResult HomeSearchJSON()
+        {
+            string querystring = Request.QueryString.Value;
+           
+            IZillowService zillowService = new ZillowService();
+            string result = zillowService.HomeSearchJSON(querystring);
+            return Json(result);
         }
 
         public IActionResult About()

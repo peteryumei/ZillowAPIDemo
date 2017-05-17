@@ -9,5 +9,11 @@ namespace ZillowAPIDemo.Service
     public interface IZillowService
     {
         SearchResult HomeSearch(HomeAddress address);
+
+        string HomeSearchJSON(HomeAddress address);
+
+        string HomeSearchJSON(string address);
+
+        string HomeSearchXML(HomeAddress address);
     }
 }

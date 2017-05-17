@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZillowAPIDemo.Models;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 
 namespace ZillowAPIDemo.Service
 {
-    public class ZillowService: IZillowService
+    class ZillowService: IZillowService
     {
         public ZillowService()
         {
 
         }
 
-        SearchResult HomeSearch(HomeAddress address)
+        public SearchResult HomeSearch(HomeAddress address)
         {
-            return new SearchResult();
+            SearchResult result = new SearchResult();
+            result.zpid = "33333";
+            result.returnCode = "0";
+            result.returnMessgae = "Success";
+            result.StreetAddress = address.StreetAddress;
+            return result;
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ZillowAPIDemo.Models;
+using ZillowAPIDemo.Service;
 
 namespace ZillowAPIDemo.Controllers
 {
@@ -20,7 +22,9 @@ namespace ZillowAPIDemo.Controllers
         {
 
             string address = model.StreetAddress;
-                return View();
+            IZillowService zillowService = new ZillowService();
+            SearchResult resultResultModel = zillowService.HomeSearch(model);
+            return View("SearchResult", resultResultModel);
         }
 
         public IActionResult About()

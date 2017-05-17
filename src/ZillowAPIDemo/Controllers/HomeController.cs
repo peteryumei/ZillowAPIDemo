@@ -8,9 +8,19 @@ namespace ZillowAPIDemo.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ActionName("Index")]
+        public IActionResult IndexPost(Models.HomeAddress model)
+        {
+
+            string address = model.StreetAddress;
+                return View();
         }
 
         public IActionResult About()
@@ -19,6 +29,7 @@ namespace ZillowAPIDemo.Controllers
 
             return View();
         }
+        
 
         public IActionResult Contact()
         {

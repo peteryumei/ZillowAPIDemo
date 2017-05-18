@@ -71,8 +71,8 @@ namespace ZillowAPIDemo.Service
         }
                 catch (Exception ex)
                 {
-                    //TODO log error here
-                    return null;
+                    //TODO log error here and throw the error back to controller
+                    throw ex;
                 }
 }
         }
@@ -120,8 +120,8 @@ namespace ZillowAPIDemo.Service
                 }
                 catch (Exception ex)
                 {
-                    //TODO log error here
-                    return "";
+                    //TODO log error here and throw the error back to controller
+                    throw ex;
                 }
             }
         }
@@ -141,8 +141,8 @@ namespace ZillowAPIDemo.Service
                 }
                 catch (Exception ex)
                 {
-                    //TODO log error here
-                    return "";
+                    //TODO log error here and throw the error back to controller
+                    throw ex;
                 }
             }
         }

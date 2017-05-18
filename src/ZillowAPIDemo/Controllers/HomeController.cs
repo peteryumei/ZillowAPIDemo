@@ -43,8 +43,19 @@ namespace ZillowAPIDemo.Controllers
             string querystring = Request.QueryString.Value;
            
             IZillowService zillowService = new ZillowService();
-            string result = zillowService.HomeSearchJSON(querystring);
-            return Json(result);
+            try
+            { 
+                string result = zillowService.HomeSearchJSON(querystring);
+                return Json(result);
+            }
+            catch (Exception ex)
+            {
+                SearchResult result = new SearchResult();
+                result.returnCode = "-1";
+                result.returnMessgae = "Fatal Error: " + ex.Message;
+                return Json(result);
+            }
+            
         }
 
         public IActionResult About()
